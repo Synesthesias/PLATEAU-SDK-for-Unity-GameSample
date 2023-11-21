@@ -1,0 +1,34 @@
+{
+    "name": "InputManage",
+    "maps": [
+        {
+            "name": "GameInput",
+            "id": "4e99d668-107f-4411-b186-93e86b4f107e",
+            "actions": [
+                {
+                    "name": "Finish",
+                    "type": "Button",
+                    "id": "3ea9d243-8f86-40e2-a389-2fcbca58276b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f5a1579b-a5a0-461e-ad3e-0ed3c55830dc",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Finish",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

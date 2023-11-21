@@ -1,0 +1,74 @@
+{
+    "name": "InputScene",
+    "maps": [
+        {
+            "name": "SelectScene",
+            "id": "3b542b28-149d-4c03-81d9-81d1d62a9a5a",
+            "actions": [
+                {
+                    "name": "ChangeCameraScene",
+                    "type": "Button",
+                    "id": "788a1b1e-11a5-47e3-b3a6-0e3a25fb96d3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeFilterScene",
+                    "type": "Button",
+                    "id": "19af6d59-6a95-43a2-85c1-76aab7d4650d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectObject",
+                    "type": "Button",
+                    "id": "b3808322-c0a3-4bc2-a8d1-0bd0521501c6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "62d729d6-9050-4c51-8b71-d3257f200b07",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeCameraScene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b7e8f153-7ef6-461d-b55b-2c038537afb2",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeFilterScene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e87adb06-4719-4f90-a85b-b75d03df5ea0",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
