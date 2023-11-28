@@ -1,10 +1,12 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/%E7%84%A1%E9%A1%8C.png?fileID=2800000&amp;guid=129c7174ffef87348a1a54807f8cc6e4&amp;type=3#無題&apos;); height: 564px; width: 214px; max-width: none; max-height: none;">
-        <ui:Label text="GMLフィルター" display-tooltip-when-elided="true" name="Header1" style="background-color: rgba(43, 43, 43, 0); -unity-background-image-tint-color: rgb(255, 255, 255); color: rgb(16, 164, 174); -unity-font-style: bold; font-size: 20px; padding-left: 11px; padding-right: 12px; padding-top: 4px; padding-bottom: 6px; -unity-text-outline-color: rgba(0, 0, 0, 0); top: 46px; -unity-text-align: upper-right; position: absolute; width: 147px; left: 84px;">
-            <ui:Label display-tooltip-when-elided="true" name="FilterLabel" style="top: 40px;" />
+    <ui:VisualElement style="background-image: url(&apos;project://database/Assets/Images/rejend2.png?fileID=2800000&amp;guid=b58974956bc44304d883acd47c39e9f4&amp;type=3#rejend2&apos;); height: 203px; width: 203px; max-width: none; max-height: none; position: absolute; left: 97px; top: 10px;">
+        <ui:Label text="GMLフィルター" display-tooltip-when-elided="true" name="Header1" style="background-color: rgba(43, 43, 43, 0); -unity-background-image-tint-color: rgb(255, 255, 255); color: rgb(16, 164, 174); -unity-font-style: bold; font-size: 15px; padding-left: 11px; padding-right: 12px; padding-top: 4px; padding-bottom: 6px; -unity-text-outline-color: rgba(0, 0, 0, 0); top: 42px; -unity-text-align: upper-right; position: absolute; width: 114px; left: 42px; right: auto;">
+            <ui:Label display-tooltip-when-elided="true" name="FilterLabel" style="top: 40px; -unity-text-align: upper-center;" />
         </ui:Label>
-        <ui:Label text="生存者の位置" display-tooltip-when-elided="false" name="Header2" style="bottom: 172px; color: rgb(16, 164, 174); background-color: rgba(43, 43, 43, 0); padding-left: 11px; padding-right: 12px; padding-top: 4px; padding-bottom: 6px; font-size: 20px; -unity-text-align: upper-left; -unity-font-style: bold; top: 271px; position: absolute; width: 150px; left: 3px;">
-            <ui:Label display-tooltip-when-elided="true" name="DistanceLabel" style="top: 40px;" />
+    </ui:VisualElement>
+    <ui:VisualElement style="width: 203px; height: 203px; position: absolute; -unity-text-align: upper-center; font-size: 15px; background-image: url(&apos;project://database/Assets/Images/rejend2.png?fileID=2800000&amp;guid=b58974956bc44304d883acd47c39e9f4&amp;type=3#rejend2&apos;); top: 227px; left: 23px;">
+        <ui:Label text="生存者の位置" display-tooltip-when-elided="false" name="Header2" style="bottom: 135px; color: rgb(16, 164, 174); background-color: rgba(43, 43, 43, 0); padding-left: 11px; padding-right: 12px; padding-top: 4px; padding-bottom: 6px; font-size: 15px; -unity-text-align: upper-center; -unity-font-style: bold; top: 42px; position: absolute; width: 105px; left: 51px;">
+            <ui:Label display-tooltip-when-elided="true" name="DistanceLabel" style="top: 40px; position: absolute; width: 110px; height: 72px;" />
         </ui:Label>
     </ui:VisualElement>
 </ui:UXML>

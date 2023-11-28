@@ -98,16 +98,10 @@ namespace PLATEAU.Samples
 
 
                 //UI
-            filteringLabel = HintUi.rootVisualElement.Q<Label>("FilterLabel");
-            distanceLabel = HintUi.rootVisualElement.Q<Label>("DistanceLabel");
-            correctBuildingLabel = GmlUi.rootVisualElement.Q<Label>("CorrectBuildingLabel");
-            selectBuildingLabel = GmlUi.rootVisualElement.Q<Label>("SelectBuildingLabel");
-
-
-            correctBuildingLabelText = "";
-            distanceLabelText = "ソナー残数 : 5";
-
             HintUi.gameObject.SetActive(false);
+            GmlUi.gameObject.SetActive(false);
+
+
         }
 
         // Plateauのデータに関する関数
@@ -379,7 +373,7 @@ namespace PLATEAU.Samples
         {
             // 目の前の建物のTransform情報を得る(GameObject -> Transform)
             var trans = Lookforward();
-            if(trans == null)
+            if(trans == null || trans.parent.parent == null)
             {
                 selectedCityObject = null;
                 return;
@@ -410,7 +404,7 @@ namespace PLATEAU.Samples
                 {
                     if(AttributeKeyValue.Key.Path.Contains(HintContent.name))
                     {
-                        GMLText += HintContent.name + "\n" + AttributeKeyValue.Value + "\n\n";
+                        GMLText += HintContent.name + "\n" + AttributeKeyValue.Value + "\n";
                     }
                 }
             }
@@ -448,6 +442,11 @@ namespace PLATEAU.Samples
             if(isInitialiseFinish)
             {
                 initializingUi.gameObject.SetActive(false);
+                GmlUi.gameObject.SetActive(true);
+                correctBuildingLabel = GmlUi.rootVisualElement.Q<Label>("CorrectBuildingLabel");
+                selectBuildingLabel = GmlUi.rootVisualElement.Q<Label>("SelectBuildingLabel");
+                correctBuildingLabelText = "";
+                distanceLabelText = "ソナー残数 : 5";
             }
             return isInitialiseFinish;
         }

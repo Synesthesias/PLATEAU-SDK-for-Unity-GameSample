@@ -1,5 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <ui:VisualElement style="background-color: rgba(0, 0, 0, 0.5); width: 100%; height: 100%;">
-        <ui:Label text="初期化中" display-tooltip-when-elided="true" style="-unity-text-align: middle-center; width: 100%; height: 100%; color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 20px;" />
+    <ui:VisualElement style="background-color: rgba(0, 0, 0, 0.5); width: 100%; height: 100%; background-image: none;">
+        <ui:Label text="INITIALISING..." display-tooltip-when-elided="true" style="-unity-text-align: middle-center; width: 194px; height: 60px; color: rgb(255, 255, 255); -unity-font-style: bold; font-size: 20px; position: absolute; top: 165px; left: 467px;" />
+        <ui:Label text="BUILDING GESSER SYSTEM" display-tooltip-when-elided="true" style="position: absolute; font-size: 30px; top: 105px; left: 362px; -unity-font-style: bold; color: rgb(255, 255, 255);" />
+        <ui:Label text="ユーザ認証 : 完了&#10;PLATEAUデータ : ロード中" display-tooltip-when-elided="true" style="font-size: 25px; position: absolute; top: 300px; left: 415px; -unity-text-align: upper-center; color: rgb(255, 255, 255); -unity-font-style: bold;" />
+        <ui:VisualElement style="position: absolute; background-image: url(&apos;project://database/Assets/Images/rejend2.png?fileID=2800000&amp;guid=b58974956bc44304d883acd47c39e9f4&amp;type=3#rejend2&apos;); height: 567px; width: 653px; top: -39px; left: 237px;" />
     </ui:VisualElement>
 </ui:UXML>

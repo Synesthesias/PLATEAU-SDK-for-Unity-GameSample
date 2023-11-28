@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using StarterAssets;
+using PLATEAU.Samples;
 
 public class Zombie : MonoBehaviour
 {
@@ -10,26 +12,34 @@ public class Zombie : MonoBehaviour
     public float distance;
     public bool search;
     [SerializeField] private SphereCollider searchArea;
-    [SerializeField] float searchAngle = 180f;
+    // [SerializeField] float searchAngle = 180f;
+    private Contact ContactScript;
+    private ThirdPersonController ThirdPersonControllerScript;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
+        ContactScript = GameObject.Find("PlayerArmature").GetComponent<Contact>();
+        ThirdPersonControllerScript = GameObject.Find("PlayerArmature").GetComponent<ThirdPersonController>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         distance = Vector3.Distance(this.transform.position, player.transform.position);
-        if(distance < 30)
+        if(distance < 30 && !ThirdPersonControllerScript.isDied)
         {
             search = true;
         }
         else
         {
             search = false;
+        }
+        if(distance < 2f)
+        {
+            ContactScript.GameOverFunc();
         }
         // if(distance < 5f)
         // {
@@ -62,9 +72,9 @@ public class Zombie : MonoBehaviour
     //         search = false;
     //     }
     // }
-    private void OnDrawGizmos()
-    {
-        Handles.color = Color.red;
-        Handles.DrawSolidArc(transform.position, Vector3.up,Quaternion.Euler(0f,-searchAngle,0f)*transform.forward,searchAngle*2f,searchArea.radius);
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     Handles.color = Color.red;
+    //     Handles.DrawSolidArc(transform.position, Vector3.up,Quaternion.Euler(0f,-searchAngle,0f)*transform.forward,searchAngle*2f,searchArea.radius);
+    // }
 }
