@@ -125,6 +125,7 @@ namespace StarterAssets
             {
                 //state = State.Normal;
                 HookDelete();
+                _controller.Move(new Vector3(-hookshotDir.x*10f, 0, -hookshotDir.z * 10f));
 
                 return;
             }
