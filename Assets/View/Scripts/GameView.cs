@@ -7,6 +7,8 @@ public class GameView : ViewBase
 {
     public bool isGameClear = false;  //ゲームクリアフラグ
     public bool isGameOver = false;   //ゲームオーバーフラグ
+    public GameObject canvas;
+
 
     [SerializeField] private Canvas gameEndCanvas;
     [SerializeField] private ExtendButton retryButton;  //リトライボタン
@@ -14,11 +16,20 @@ public class GameView : ViewBase
     [SerializeField] private Text gameEndText;  //ゲーム終了テキスト
     [SerializeField] private Text scoreText;  //スコアテキスト
 
+    void Awake()
+    {
+        //カーソルのUIImage取得
+        canvas = GameObject.Find("Canvas");
+        Cursor.visible = false;
 
+    }
 
     void Start()
     {
         gameEndCanvas.enabled=false;
+        //カーソルのイメージオブジェクトをオフに
+        canvas.SetActive(false);
+
     }
     public override IEnumerator Wait()
     {
@@ -27,6 +38,9 @@ public class GameView : ViewBase
             //ゲーム終了
             if(isGameOver||isGameClear)
             {
+                //カーソルのイメージオブジェクトをオンに
+                canvas.SetActive(true);
+
                 //★UIを非表示にする
                 //★ゾンビやアイテムを消す
                 //★プレイヤーを操作できなくする

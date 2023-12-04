@@ -9,7 +9,7 @@ public class TitleView : ViewBase
 
     private void Start()
     {
-
+        Cursor.visible = false;
     }
 
     public override IEnumerator Wait()

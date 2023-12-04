@@ -2378,6 +2378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGameClear: 0
   isGameOver: 0
+  canvas: {fileID: 0}
   gameEndCanvas: {fileID: 1508796785}
   retryButton: {fileID: 232019674}
   toTitleButton: {fileID: 1963591932}
