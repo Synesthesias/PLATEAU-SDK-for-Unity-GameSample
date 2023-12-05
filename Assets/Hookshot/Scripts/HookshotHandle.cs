@@ -16,6 +16,7 @@ namespace StarterAssets
         //private float hookshotSize;
         private Vector3 characterVelocityMomentum;
         public LineRenderer lr;
+        private GameObject player;
         private CharacterController _controller;
 
 
@@ -35,6 +36,7 @@ namespace StarterAssets
         {
             lr = GetComponent<LineRenderer>();
             lr.enabled = false;
+            player = GameObject.Find("PlayerArmature");
             _controller = GetComponent<CharacterController>();
         }
 
@@ -112,6 +114,11 @@ namespace StarterAssets
 
             //normalizedはベクトルの正規化(ゼロベクトル）
             Vector3 hookshotDir = (hookshotPosition - transform.position).normalized;
+
+            if (hookshotDir.magnitude > 0.01)
+            {
+                player.transform.rotation = Quaternion.LookRotation(hookshotDir);
+            }
 
             float hookshotSpeedMin = 10f;
             float hookshotSpeedMax = 40f;
