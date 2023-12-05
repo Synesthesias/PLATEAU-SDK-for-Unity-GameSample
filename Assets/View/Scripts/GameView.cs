@@ -21,6 +21,7 @@ public class GameView : ViewBase
         //カーソルのUIImage取得
         canvas = GameObject.Find("Canvas");
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
 
     }
 
@@ -40,6 +41,7 @@ public class GameView : ViewBase
             {
                 //カーソルのイメージオブジェクトをオンに
                 canvas.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
 
                 //★UIを非表示にする
                 //★ゾンビやアイテムを消す
