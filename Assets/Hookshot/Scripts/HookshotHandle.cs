@@ -9,9 +9,6 @@ namespace StarterAssets
 {
     public class HookshotHandle : MonoBehaviour
     {
-
-
-        //private State state;
         private Vector3 hookshotPosition;
         //private float hookshotSize;
         private Vector3 characterVelocityMomentum;
@@ -71,10 +68,6 @@ namespace StarterAssets
                 {
                     hookshotAble = true;
                     hookshotPosition = hit.point;
-                    //hookshotSize = 0f;
-                    //state = State.HookshotThrown;
-                    //Debug.Log(hit.point);
-                   //state = State.HookshotFlyingPlayer;
                 }
             }
         }
@@ -86,42 +79,7 @@ namespace StarterAssets
             currentHookshot = Vector3.Lerp(currentHookshot, hookshotTransform.position, Time.deltaTime * 8f);
             lr.SetPosition(0, hookshotTransform.position);
             lr.SetPosition(1, hookshotPosition);
-            //lr.enabled = true;
-            //currentHookshot = Vector3.Lerp(currentHookshot, hookshotTransform.position, Time.deltaTime * 12f);
-
-
-            //if (lr.positionCount > 0)
-            //{
-            //    lr.positionCount = 0;
-            //}
-
-            //if (lr.positionCount == 0)
-            //{
-            //    lr.positionCount = quality + 1;
-            //}
-
-            //for (var i = 0; i < quality + 1; i++)
-            //{
-            //    var delta = i / (float)quality;
-            //    var offset = Vector3.up * waveHeight * Mathf.Sin(delta * waveCount * Mathf.PI) * AnimationCurve.Evaluate(delta);
-
-            //    // Linear interpolation without using physics
-            //    var lerpedPosition = Vector3.Lerp(currentHookshot, hookshotTransform.position, delta);
-
-            //    // Apply offset to simulate wave motion
-            //    lr.SetPosition(i, lerpedPosition + offset);
-            //}
-
         }
-
-        ////private void HandleHookshotThrown()
-        ////{
-        ////    hookshotTransform.LookAt(hookshotPosition);
-
-        ////    float hookshotThrownSpeed = 5f;
-        ////    hookshotSize += hookshotThrownSpeed * Time.deltaTime;
-        ////    hookshotTransform.localScale = new Vector3(1, 1, hookshotSize);
-        ////}
 
         public bool isreached;
         public void HandleHookshotMovement()
@@ -151,7 +109,7 @@ namespace StarterAssets
             isreached = Vector3.Distance(transform.position, hookshotPosition) < reachedHookshotPositionDistance;
             if (isreached)
             {
-                //state = State.Normal;
+               
                 HookDelete();
                 //_controller.Move(new Vector3(-hookshotDir.x*10f, 0, -hookshotDir.z * 10f));
                 hookshotAble = false;
@@ -166,7 +124,6 @@ namespace StarterAssets
                 characterVelocityMomentum = hookshotDir * hookshotSpeed * momentumExtraSpeed;
                 float jumpSpeed = 40f;
                 characterVelocityMomentum += Vector3.up * jumpSpeed;
-                //state = State.Normal;
                 HookDelete();
                 return;
             }

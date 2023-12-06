@@ -8,7 +8,7 @@ public class ActionManager : MonoBehaviour
     {
         Normal,
         HookshotFlyingPlayer,
-        //HookshotThrown
+    
     }
     public State state;
 
@@ -27,7 +27,7 @@ public class ActionManager : MonoBehaviour
 
         state = State.Normal;
         hookshotAble = hookshotHandle.hookshotAble;
-        //hookshotHandle.enabled = false;
+    
 
     }
 
@@ -56,7 +56,7 @@ public class ActionManager : MonoBehaviour
 
         }
 
-        Debug.Log(state);
+        //Debug.Log(state);
     }
 
 }
