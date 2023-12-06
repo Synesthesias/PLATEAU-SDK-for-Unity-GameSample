@@ -18,6 +18,8 @@ namespace StarterAssets
         public LineRenderer lr;
         private GameObject player;
         private CharacterController _controller;
+        private ActionManager actionManager;
+   
 
 
         [Header("Hookshot")]
@@ -39,13 +41,19 @@ namespace StarterAssets
             lr.enabled = false;
             player = GameObject.Find("PlayerArmature");
             _controller = GetComponent<CharacterController>();
-            hookshotAble = false;
+            actionManager = GetComponent<ActionManager>();
+            
+            
         }
 
         private void Update()
         {
+            
             HandleHookshotStart();
-            HandleHookshotMovement();
+            if (hookshotAble == true)
+            {
+                HandleHookshotMovement();
+            }
         }
 
         private void LateUpdate()
@@ -145,7 +153,7 @@ namespace StarterAssets
             {
                 //state = State.Normal;
                 HookDelete();
-                _controller.Move(new Vector3(-hookshotDir.x*10f, 0, -hookshotDir.z * 10f));
+                //_controller.Move(new Vector3(-hookshotDir.x*10f, 0, -hookshotDir.z * 10f));
                 hookshotAble = false;
 
                 return;
