@@ -113,15 +113,15 @@ namespace StarterAssets
 
         private bool _hasAnimator;
 
-        public enum State
-        {
-            Normal,
-            HookshotFlyingPlayer,
-            //HookshotThrown
-        }
-        public State state;
-        [Header("Hookshot")]
-        private HookshotHandle _hookshotHandle;
+        //public enum State
+        //{
+        //    Normal,
+        //    HookshotFlyingPlayer,
+        //    //HookshotThrown
+        //}
+        //public State state;
+        //[Header("Hookshot")]
+        //private HookshotHandle _hookshotHandle;
         [SerializeField] private LayerMask Hookable;
         private Vector3 hitPoint;
         private Vector3 characterVelocityMomentum;
@@ -151,8 +151,8 @@ namespace StarterAssets
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             }
 
-            state = State.Normal;
-            _hookshotHandle = this.GetComponent<HookshotHandle>();
+            //state = State.Normal;
+            //_hookshotHandle = this.GetComponent<HookshotHandle>();
         }
 
         private void Start()
@@ -181,55 +181,59 @@ namespace StarterAssets
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(1))
-            {
-                //raycastしたらHookshot動作に変える
-                if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 100f, Hookable))
-                {
-                    state = State.HookshotFlyingPlayer;
-                    hitPoint = hit.point;
-                }
-                //それ以外はNormal状態に
-                else
-                {
-                    state = State.Normal;
-                }
-            }
+            //if (Input.GetMouseButtonDown(1))
+            //{
+            //    //raycastしたらHookshot動作に変える
+            //    if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 100f, Hookable))
+            //    {
+            //        state = State.HookshotFlyingPlayer;
+            //        hitPoint = hit.point;
+            //    }
+            //    //それ以外はNormal状態に
+            //    else
+            //    {
+            //        state = State.Normal;
+            //    }
+            //}
 
 
 
 
             _hasAnimator = TryGetComponent(out _animator);
-            switch (state)
-            {
-                default:
-                case State.Normal:
-                    JumpAndGravity();
-                    GroundedCheck();
-                    Move();
-                    //_hookshotHandle.HandleHookshotStart();
-                    break;
-                case State.HookshotFlyingPlayer:
-                    if (!_hookshotHandle.isreached)
-                    {
-                        _hookshotHandle.HandleHookshotMovement(hitPoint);
-                    }
-                    else
-                    {
-                        _hookshotHandle.isreached = false;
-                        state = State.Normal;
+            //switch (state)
+            //{
+            //    default:
+            //    case State.Normal:
+            //        JumpAndGravity();
+            //        GroundedCheck();
+            //        Move();
+            //        //_hookshotHandle.HandleHookshotStart();
+            //        break;
+            //    case State.HookshotFlyingPlayer:
+            //        if (!_hookshotHandle.isreached)
+            //        {
+            //            _hookshotHandle.HandleHookshotMovement(hitPoint);
+            //        }
+            //        else
+            //        {
+            //            _hookshotHandle.isreached = false;
+            //            state = State.Normal;
 
-                    }
-                    //state = State.Normal;
-                    break;
-            }
+            //        }
+            //        //state = State.Normal;
+            //        break;
+            //}
 
-            }
+            JumpAndGravity();
+            GroundedCheck();
+            Move();
+
+        }
 
         private void LateUpdate()
         {
             CameraRotation();
-            _hookshotHandle.DrawRope();
+            //_hookshotHandle.DrawRope();
         }
 
         private void AssignAnimationIDs()
@@ -337,23 +341,23 @@ namespace StarterAssets
 
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
-            //momentum
-            targetDirection += characterVelocityMomentum;
+            ////momentum
+            //targetDirection += characterVelocityMomentum;
 
-            // move the player
-            _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
-                             new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+            //// move the player
+            //_controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
+            //                 new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 
-            //momentumを弱くする
-            if (characterVelocityMomentum.magnitude >= 0)
-            {
-                float momentumDrag = 3f;
-                characterVelocityMomentum -= characterVelocityMomentum * momentumDrag * Time.deltaTime;
-                if (characterVelocityMomentum.magnitude < .0f)
-                {
-                    characterVelocityMomentum = Vector3.zero;
-                }
-            }
+            ////momentumを弱くする
+            //if (characterVelocityMomentum.magnitude >= 0)
+            //{
+            //    float momentumDrag = 3f;
+            //    characterVelocityMomentum -= characterVelocityMomentum * momentumDrag * Time.deltaTime;
+            //    if (characterVelocityMomentum.magnitude < .0f)
+            //    {
+            //        characterVelocityMomentum = Vector3.zero;
+            //    }
+            //}
 
             // update animator if using character
             if (_hasAnimator)

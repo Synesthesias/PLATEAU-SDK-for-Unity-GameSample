@@ -25,6 +25,7 @@ namespace StarterAssets
         [SerializeField] private LayerMask Hookable;
         [SerializeField] private Transform hookshotTransform;
         [SerializeField] private AnimationCurve AnimationCurve;
+        public bool hookshotAble;
         public int quality;
         public float waveCount;
         public float waveHeight;
@@ -38,25 +39,37 @@ namespace StarterAssets
             lr.enabled = false;
             player = GameObject.Find("PlayerArmature");
             _controller = GetComponent<CharacterController>();
+            hookshotAble = false;
+        }
+
+        private void Update()
+        {
+            HandleHookshotStart();
+            HandleHookshotMovement();
+        }
+
+        private void LateUpdate()
+        {
+            DrawRope();
         }
 
 
         //Hookshot
-        //public void HandleHookshotStart()
-        //{
-        //    if (Input.GetMouseButtonDown(0))
-        //    {
-        //        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 100f, Hookable))
-        //        {
-
-
-        //            //hookshotSize = 0f;
-        //            //state = State.HookshotThrown;
-        //            //Debug.Log(hit.point);
-        //            //state = State.HookshotFlyingPlayer;
-        //        }
-        //    }
-        //}
+        public void HandleHookshotStart()
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 100f, Hookable))
+                {
+                    hookshotAble = true;
+                    hookshotPosition = hit.point;
+                    //hookshotSize = 0f;
+                    //state = State.HookshotThrown;
+                    //Debug.Log(hit.point);
+                   //state = State.HookshotFlyingPlayer;
+                }
+            }
+        }
 
         //ロープ描写
         private Vector3 currentHookshot;
@@ -103,14 +116,14 @@ namespace StarterAssets
         ////}
 
         public bool isreached;
-        public void HandleHookshotMovement(Vector3 hitPoint)
+        public void HandleHookshotMovement()
         {
-            print(lr.enabled);
+            //print(lr.enabled);
             lr.enabled = true;
 
             // debugHitPosition の位置を hit.point に設定
             //debugHitPosition.position = hitPoint;
-            hookshotPosition = hitPoint;
+            //hookshotPosition = hitPoint;
 
             //normalizedはベクトルの正規化(ゼロベクトル）
             Vector3 hookshotDir = (hookshotPosition - transform.position).normalized;
@@ -133,6 +146,7 @@ namespace StarterAssets
                 //state = State.Normal;
                 HookDelete();
                 _controller.Move(new Vector3(-hookshotDir.x*10f, 0, -hookshotDir.z * 10f));
+                hookshotAble = false;
 
                 return;
             }

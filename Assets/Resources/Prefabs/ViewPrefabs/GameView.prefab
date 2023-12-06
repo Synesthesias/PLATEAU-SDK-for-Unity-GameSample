@@ -4132,6 +4132,7 @@ GameObject:
   - component: {fileID: 692535939736031529}
   - component: {fileID: 6069783742079118298}
   - component: {fileID: 3309572655438602140}
+  - component: {fileID: 67354359786438471}
   m_Layer: 2
   m_Name: PlayerArmature
   m_TagString: Player
@@ -4252,7 +4253,6 @@ MonoBehaviour:
   BottomClamp: -90
   CameraAngleOverride: 0
   LockCameraPosition: 0
-  state: 0
   Hookable:
     serializedVersion: 2
     m_Bits: 8
@@ -4527,10 +4527,24 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  hookshotAble: 0
   quality: 0
   waveCount: 0
   waveHeight: 0
   isreached: 0
+--- !u!114 &67354359786438471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6068492455930876395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f729b52a00d791b4693ff92bbea2d7fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
 --- !u!1 &6094061506224519734
 GameObject:
   m_ObjectHideFlags: 0
