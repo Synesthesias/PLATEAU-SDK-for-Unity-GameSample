@@ -6437,7 +6437,6 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 0.7851589, a: 0}
   selectedColor: {r: 1, g: 0, b: 0, a: 0}
   PlayerPosCamera: {fileID: 7600826447983077792}
-  SceneName: 
   isInitialiseFinish: 0
 --- !u!1 &7600826448019005793
 GameObject:
