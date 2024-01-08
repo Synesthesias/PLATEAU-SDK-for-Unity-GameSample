@@ -8,8 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Prop_TSControlBox_01_0_MAT
-  m_Shader: {fileID: -6465566751694194690, guid: 62678c4c58b97ef44a1c969c786fdf1c,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 62678c4c58b97ef44a1c969c786fdf1c, type: 3}
   m_ValidKeywords:
   - _DETAIL_UV_SET_UV0
   - _UV_SET_UV0
@@ -109,6 +108,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Triplanar_5df5efc056b24b93b4bd75838049bbb3_Texture_1:
+        m_Texture: {fileID: 2800000, guid: fa12be8d8a0d8054cb9bf64d2ca17ab9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Triplanar_b46a120564774226aab3d7184560112c_Texture_1:
         m_Texture: {fileID: 2800000, guid: fa12be8d8a0d8054cb9bf64d2ca17ab9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}

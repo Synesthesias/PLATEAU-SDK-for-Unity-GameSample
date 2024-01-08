@@ -19,7 +19,7 @@
       }
     },
     "com.synesthesias.plateau-unity-sdk": {
-      "version": "file:./PLATEAU-SDK-for-Unity-v2.2.1-alpha.tgz",
+      "version": "file:C:/Users/nsiom/Downloads/PLATEAU SDK for Unity to Asset 2.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
@@ -145,6 +145,17 @@
         "com.cesium.unity": "1.6.3"
       }
     },
+    "com.unity.probuilder": {
+      "version": "5.1.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.settings-manager": "1.0.3",
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.render-pipelines.core": {
       "version": "12.1.12",
       "depth": 1,
@@ -175,7 +186,7 @@
     },
     "com.unity.settings-manager": {
       "version": "1.0.3",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
